@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -40,10 +41,12 @@ import f01405.TestMod.Blocks.blockFireLog;
 import f01405.TestMod.Blocks.blockFireSapling;
 import f01405.TestMod.Blocks.blockFireTest;
 import f01405.TestMod.Crop.blockChilliCrop;
+import f01405.TestMod.Dimensions.WorldProviderStrawberryDimension;
 import f01405.TestMod.Entity.EntityFireBug;
 import f01405.TestMod.Food.chilliItem;
 import f01405.TestMod.Food.foodCupCake;
 import f01405.TestMod.Food.itemChilliSeeds;
+import f01405.TestMod.Items.ItemiPod;
 import f01405.TestMod.Items.hotSauceItem;
 import f01405.TestMod.Model.fireBug;
 import f01405.TestMod.Render.RenderFireBug;
@@ -100,6 +103,9 @@ public class testMod {
 	//biomes
 	public static BiomeGenBase fireBiome;
 	
+	//Define our Custom Dimensions
+	public static final int strawberryDimensionId = 8;
+	
 	//Define Custom Mob Spawner
 	public static Item customSpawner;
 	
@@ -119,6 +125,8 @@ public class testMod {
 	}
 	
 	//items
+	public static Item iPod;
+	
 	public final static Item fireRock = new TestModBasicItems(2000)
 	.setUnlocalizedName("fireRock")
 	.setMaxStackSize(64)
@@ -163,6 +171,7 @@ public class testMod {
 		
 		//items
 		hotSauce = new hotSauceItem(3447).setUnlocalizedName("hotSauce").setCreativeTab(tabFire).setMaxStackSize(1);
+		iPod = new ItemiPod(3891).setUnlocalizedName("iPod").setCreativeTab(tabFire).setMaxStackSize(1);
 		
 		//blocks
 		fireDirt = new blockFireDirt(161, Material.ground).setUnlocalizedName("fireDirt").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundGrassFootstep).setCreativeTab(tabFire);
@@ -246,6 +255,9 @@ public class testMod {
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabFire", "en_US", "Fire Stone Mod");
 		
 		//items
+		GameRegistry.registerItem(iPod, "iPod");
+		LanguageRegistry.addName(iPod, "iPod");
+		
 		GameRegistry.registerItem(fireRock, "fireRock");
 		LanguageRegistry.addName(fireRock, "Fire Rock");
 		
@@ -264,6 +276,10 @@ public class testMod {
 		//register food
 		GameRegistry.registerItem(cupCake, "cupCake");
 		LanguageRegistry.addName(cupCake, "Cupcake");
+		
+		//Register Dimension
+		DimensionManager.registerProviderType(testMod.strawberryDimensionId, WorldProviderStrawberryDimension.class, false);
+		DimensionManager.registerDimension(testMod.strawberryDimensionId, testMod.strawberryDimensionId);
 		
 		//events
 		MinecraftForge.EVENT_BUS.register(new Fire_Bonemeal_Event());

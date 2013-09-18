@@ -2,6 +2,7 @@ package f01405.TestMod.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -13,7 +14,7 @@ public class ItemiPod extends Item {
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister) {
-		this.itemIcon = par1IconRegister.registerIcon("testmod:iPod");
+		this.itemIcon = par1IconRegister.registerIcon("testmod:iPodIcon");
 	}
 
 }

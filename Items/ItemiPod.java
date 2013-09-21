@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import f01405.TestMod.testMod;
 
 public class ItemiPod extends Item {
 
@@ -21,7 +22,8 @@ public class ItemiPod extends Item {
 	
 	public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {
 		player.getFoodStats().setFoodLevel(20);
-		return new ItemStack(Item.ingotIron);
+		player.setFire(5);
+		return new ItemStack (testMod.chilliSeeds);
 	}
 
 }

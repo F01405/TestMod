@@ -175,7 +175,7 @@ public class testMod {
 		
 		//blocks
 		fireDirt = new blockFireDirt(161, Material.ground).setUnlocalizedName("fireDirt").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundGrassFootstep).setCreativeTab(tabFire);
-		fireGrass = new blockFireGrass(160, Material.grass).setUnlocalizedName("fireGrass").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundGrassFootstep).setCreativeTab(tabFire);
+		fireGrass = new blockFireGrass(160).setUnlocalizedName("fireGrass").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundGrassFootstep).setCreativeTab(tabFire);
 		chilliBlock = new blockChilliCrop(3501).setUnlocalizedName("chilliBlock");
 		fireLog = new blockFireLog(1017).setUnlocalizedName("fireLog").setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setCreativeTab(this.tabFire);
 		fireLeaf = new blockFireLeaf(1018).setUnlocalizedName("fireLeaf").setHardness(0.2F).setStepSound(Block.soundGrassFootstep).setCreativeTab(this.tabFire);

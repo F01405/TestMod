@@ -30,6 +30,7 @@ public class hotSauceItem extends Item {
 		this.itemIcon = par1IconRegister.registerIcon("testmod:hotSauce");
 		
 	}
+	
 	 public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	    {
 	        if (!par3EntityPlayer.capabilities.isCreativeMode)

@@ -131,5 +131,10 @@ public class blockFireLog extends BlockRotatedPillar
     {
         return true;
     }
+
+	@Override
+	protected Icon getSideIcon(int i) {
+		return null;
+	}
 }
 

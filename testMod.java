@@ -131,18 +131,18 @@ public class testMod {
 	.setUnlocalizedName("fireRock")
 	.setMaxStackSize(64)
 	.setCreativeTab(tabFire)
-	.func_111206_d("testmod:fireRock");
+	.setTextureName("testmod:fireRock");
 	
 	public final static Item softFireIngot = new TestModBasicItems(2001)
 	.setUnlocalizedName("softFireIngot")
 	.setMaxStackSize(64)
 	.setCreativeTab(tabFire)
-	.func_111206_d("testmod:softFireIngot");
+	.setTextureName("testmod:softFireIngot");
 	
 	public final static Item hardFireIngot = new TestModBasicItems(2030)
 	.setMaxStackSize(64).setUnlocalizedName("hardFireIngot")
 	.setCreativeTab(tabFire)
-	.func_111206_d("testmod:hardFireIngot");
+	.setTextureName("testmod:hardFireIngot");
 	
 	//blocks
 	
@@ -158,7 +158,7 @@ public class testMod {
 	.setUnlocalizedName("oreFire")
 	.setStepSound(Block.soundStoneFootstep)
 	.setCreativeTab(tabFire)
-	.func_111022_d("testmod:oreFire");
+	.setTextureName("testmod:oreFire");
 	
 	
 	@SidedProxy(clientSide="f01405.TestMod.client.ClientProxy", serverSide="f01405.TestMod.CommonProxy")
@@ -174,7 +174,7 @@ public class testMod {
 		iPod = new ItemiPod(3891).setUnlocalizedName("iPod").setCreativeTab(tabFire).setMaxStackSize(1);
 		
 		//blocks
-		fireDirt = new blockFireDirt(161, Material.ground).setUnlocalizedName("fireDirt").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundGrassFootstep).setCreativeTab(tabFire);
+		fireDirt = new blockFireDirt(161, Material.ground).setUnlocalizedName("fireDirt").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundGravelFootstep).setCreativeTab(tabFire);
 		fireGrass = new blockFireGrass(160).setUnlocalizedName("fireGrass").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundGrassFootstep).setCreativeTab(tabFire);
 		chilliBlock = new blockChilliCrop(3501).setUnlocalizedName("chilliBlock");
 		fireLog = new blockFireLog(1017).setUnlocalizedName("fireLog").setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setCreativeTab(this.tabFire);
@@ -233,7 +233,7 @@ public class testMod {
 		fireBiome = new biomeFireBiome(150).setBiomeName("Cake").setMinMaxHeight(0.23F, 0.22F);
 		
 		//Settings for Custom Spawner
-		customSpawner = new customSpawner(1016).setUnlocalizedName("customSpawner").func_111206_d("testmod:customSpawner").setCreativeTab(this.tabFire);
+		customSpawner = new customSpawner(1016).setUnlocalizedName("customSpawner").setTextureName("testmod:customSpawner").setCreativeTab(this.tabFire);
 		
 		//Settings for mob
 		EntityRegistry.registerGlobalEntityID(EntityFireBug.class, "FireBug", 1);

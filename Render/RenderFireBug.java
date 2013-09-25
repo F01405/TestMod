@@ -33,7 +33,7 @@ public class RenderFireBug extends RenderLiving {
 	}
 
 	@Override
-	protected ResourceLocation func_110775_a(Entity entity) {
+	protected ResourceLocation getEntityTexture(Entity entity) {
 		return new ResourceLocation("testmod:textures/mobs/fireBug.png");
 	}
 

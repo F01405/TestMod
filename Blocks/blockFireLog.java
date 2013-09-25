@@ -13,6 +13,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import f01405.TestMod.testMod;
 
 public class blockFireLog extends BlockRotatedPillar
 {
@@ -41,7 +42,7 @@ public class blockFireLog extends BlockRotatedPillar
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return this.blockID;
+        return testMod.fireLog.blockID;
     }
 
     /**
@@ -73,13 +74,13 @@ public class blockFireLog extends BlockRotatedPillar
     }
 
     @SideOnly(Side.CLIENT)
-    protected Icon func_111048_c(int par1)
+    protected Icon getSideIcon(int par1)
     {
         return this.field_111052_c[par1];
     }
 
     @SideOnly(Side.CLIENT)
-    protected Icon func_111049_d(int par1)
+    protected Icon getEndIcon(int par1)
     {
         return this.tree_top[par1];
     }
@@ -131,10 +132,5 @@ public class blockFireLog extends BlockRotatedPillar
     {
         return true;
     }
-
-	@Override
-	protected Icon getSideIcon(int i) {
-		return null;
-	}
 }
 

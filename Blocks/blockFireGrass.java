@@ -19,7 +19,9 @@ public class blockFireGrass extends Block
     @SideOnly(Side.CLIENT)
     private Icon iconGrassTop;
     @SideOnly(Side.CLIENT)
-    public Icon iconGrassSideOverlay;
+    private Icon iconSnowSide;
+    @SideOnly(Side.CLIENT)
+    private Icon iconGrassSideOverlay;
 
     public blockFireGrass(int par1)
     {
@@ -93,7 +95,7 @@ public class blockFireGrass extends Block
         else
         {
             Material material = par1IBlockAccess.getBlockMaterial(par2, par3 + 1, par4);
-            return null;
+            return material != Material.snow && material != Material.craftedSnow ? this.blockIcon : this.iconSnowSide;
         }
     }
 
@@ -107,8 +109,6 @@ public class blockFireGrass extends Block
     {
         this.blockIcon = par1IconRegister.registerIcon("testmod:fireGrass_Side");
         this.iconGrassTop = par1IconRegister.registerIcon("testmod:fireGrass_Top");
+        this.iconSnowSide = par1IconRegister.registerIcon("testmod:fireGrass_Side");
     }
-
-
-
 }
